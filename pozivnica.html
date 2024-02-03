@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pozivnica za Dan zaljubljenih</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-image: url("C:/Users/Bojana/Desktop/1402/download.jpeg"); /* Ispravna putanja sa kosim crticama */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* Visina ekrana */
+            margin: 0; /* Uklanja unutrašnji margin body elementa */
+            color: #000000; /* Dodajte belu boju teksta ili drugu boju koja odgovara pozadini */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .invitation {
+            padding: 20px; /* Dodajte razmak oko elemenata unutar invitation div-a */
+            border-radius: 10px; /* Dodajte zaobljeni izgled invitation div-a */
+            position: relative; /* Omogućava pozicioniranje dodatnih elemenata unutar .invitation */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8); /* Beli pravougaonik sa prozirnošću */
+            border-radius: 10px; /* Dodajte zaobljeni izgled belom pravougaoniku */
+            padding: 20px; /* Dodajte razmak između belog pravougaonika i teksta */
+        }
+
+        .invitation-content {
+            z-index: 1; /* Postavite sadržaj iznad belog pravougaonika */
+            text-align: center;
+        }
+
+        .invitation h1 {
+            margin-bottom: 20px; /* Dodajte razmak ispod naslova */
+        }
+
+        .response {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="invitation">
+    <div class="overlay">
+        <div class="invitation-content">
+            <h1>Will you be my Valentine?</h1>
+            <button onclick="checkResponse('yes')">Da</button>
+            <button onclick="checkResponse('no')">Ne</button>
+            <div class="response" id="response"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function checkResponse(response) {
+        var responseElement = document.getElementById('response');
+        if (response === 'yes') {
+            window.location.href = 'srecna_buba.html'; // Preusmeravanje na novu stranicu
+        } else {
+            responseElement.innerHTML = 'Greška, probajte ponovo.';
+        }
+    }
+</script>
+
+</body>
+</html>
